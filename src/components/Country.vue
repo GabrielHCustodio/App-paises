@@ -9,7 +9,7 @@
         <img :src="d.flags.svg" alt="" />
       </div>
       <div class="info-right">
-        <p>Nome do país: <span>{{ d.translations.pt }}</span></p>
+        <p>Nome do país: <span>{{ d.translations.br }}</span></p>
         <p v-if="d.capital">Nome da capital: <span>{{ d.capital }}</span></p>
         <p>Sub região: <span>{{ d.subregion }}</span></p>
         <p>Continente: <span>{{ d.region }}</span></p>

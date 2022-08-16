@@ -15,7 +15,7 @@
           </select>
         </div>
         <div class="search">
-          <input type="text" v-model="nameCountry" placeholder="Nome do país..." />
+          <input @keyup.enter="nameCountry" id="country" type="text" placeholder="Nome do país..." />
         </div>
       </div>
     </div>
@@ -26,15 +26,17 @@
 export default {
   name: "Home",
   data: () => ({
-    nameCountry: "",
-    ordenation: "",
+    ordenation: ''
   }),
+  methods: {
+    nameCountry() {
+      let country = document.getElementById('country').value
+      this.$emitter.emit('nameCountry', country)
+  }
+  },
   watch: {
     ordenation(value) {
       this.$emitter.emit('ordenation', value)
-    },
-    nameCountry(value) {
-      this.$emitter.emit('nameCountry', value)
     }
   }
 };

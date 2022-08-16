@@ -27,6 +27,9 @@ import ApiMixin from "@/mixins/ApiMixins";
 export default {
   name: "WorldBoxes",
   mixins: [ApiMixin],
+  data: () => ({
+    newData: ''
+  }),
   created() {
     const url = "https://restcountries.com/v2/all";
     this.getDataApi(url);
@@ -50,8 +53,13 @@ export default {
       }
     }),
     this.$emitter.on('nameCountry', (value) => {
-      const url = `https://restcountries.com/v2/name/${value}`
-      this.getDataApi(url)
+      if(value !== '') {
+        const url = `https://restcountries.com/v2/name/${value}`;
+        this.getDataApi(url);
+      }else {
+        const url = "https://restcountries.com/v2/all";
+        this.getDataApi(url);
+      }
     })
   }
 };
