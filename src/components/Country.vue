@@ -10,7 +10,7 @@
       </div>
       <div class="info-right">
         <p>Name of the country: <span>{{ d.translations.br }}</span></p>
-        <p v-if="d.capital">Nome of the capital: <span>{{ d.capital }}</span></p>
+        <p v-if="d.capital">Name of the capital: <span>{{ d.capital }}</span></p>
         <p>Sub region: <span>{{ d.subregion }}</span></p>
         <p>Continent: <span>{{ d.region }}</span></p>
         <p>Total population: <span>{{ d.population }}</span></p>
