@@ -109,7 +109,7 @@ export default {
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        height: 650px;
+        height: 730px;
         overflow: hidden;
     }
 

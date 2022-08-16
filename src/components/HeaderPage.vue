@@ -15,7 +15,7 @@
           </select>
         </div>
         <div class="search">
-          <input type="text" v-model="name" placeholder="Nome do país..." />
+          <input type="text" v-model="nameCountry" placeholder="Nome do país..." />
         </div>
       </div>
     </div>
@@ -26,9 +26,17 @@
 export default {
   name: "Home",
   data: () => ({
-    name: "",
+    nameCountry: "",
     ordenation: "",
   }),
+  watch: {
+    ordenation(value) {
+      this.$emitter.emit('ordenation', value)
+    },
+    nameCountry(value) {
+      this.$emitter.emit('nameCountry', value)
+    }
+  }
 };
 </script>
 

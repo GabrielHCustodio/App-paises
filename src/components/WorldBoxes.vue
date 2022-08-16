@@ -8,7 +8,7 @@
         </div>
         <!--box-right-->
         <div class="box-right">
-          <p>País: {{ d.translations.br }}</p>
+          <p>País: {{ d.translations.pt }}</p>
           <p v-if="d.capital">Capital: {{ d.capital }}</p>
         </div>
         <div class="plus">
@@ -30,6 +30,29 @@ export default {
   created() {
     const url = "https://restcountries.com/v2/all";
     this.getDataApi(url);
+  },
+  updated() {
+    this.$emitter.on('ordenation', (value) => {
+      if(value == 1) {
+        this.data.sort((a,b) => {
+          if(b.translations.br < a.translations.br) {
+            return 1
+          }else if(b.translations.br > a.translations.br) {
+            return -1
+          }
+          return 0
+        })
+      }
+      if(value == 2) {
+        this.data.sort((a,b) => {
+          return b.translations.br.localeCompare(a.translations.br) 
+        })
+      }
+    }),
+    this.$emitter.on('nameCountry', (value) => {
+      const url = `https://restcountries.com/v2/name/${value}`
+      this.getDataApi(url)
+    })
   }
 };
 </script>
@@ -61,6 +84,7 @@ export default {
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  transition: all 2s;
 }
 
 .box-left {

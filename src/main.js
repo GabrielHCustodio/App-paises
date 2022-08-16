@@ -1,5 +1,9 @@
 import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
+import emitterPlugin from '@/emmiter';
 
-createApp(App).use(router).mount('#app')
+const app = createApp(App)
+app.use(emitterPlugin)
+app.use(router)
+app.mount('#app')
