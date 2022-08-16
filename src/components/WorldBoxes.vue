@@ -8,7 +8,7 @@
         </div>
         <!--box-right-->
         <div class="box-right">
-          <p>País: {{ d.translations.pt }}</p>
+          <p>Country: {{ d.name }}</p>
           <p v-if="d.capital">Capital: {{ d.capital }}</p>
         </div>
         <div class="plus">
@@ -38,9 +38,9 @@ export default {
     this.$emitter.on('ordenation', (value) => {
       if(value == 1) {
         this.data.sort((a,b) => {
-          if(b.translations.br < a.translations.br) {
+          if(b.name < a.name) {
             return 1
-          }else if(b.translations.br > a.translations.br) {
+          }else if(b.name > a.name) {
             return -1
           }
           return 0
@@ -48,7 +48,7 @@ export default {
       }
       if(value == 2) {
         this.data.sort((a,b) => {
-          return b.translations.br.localeCompare(a.translations.br) 
+          return b.name.localeCompare(a.name) 
         })
       }
     }),

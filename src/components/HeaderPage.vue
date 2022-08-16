@@ -3,19 +3,19 @@
     <div class="header">
       <!--header-left-->
       <div class="header-left">
-        <h1 id="logo">Países do Mundo</h1>
+        <h1 id="logo">Countries of the world</h1>
       </div>
       <!--header-right-->
       <div class="header-right">
         <div class="order">
           <select name="order" v-model="ordenation">
-            <option value="" disabled>Ordenar paises...</option>
+            <option value="" disabled>Order countries...</option>
             <option value="1">A - Z</option>
             <option value="2">Z - A</option>
           </select>
         </div>
         <div class="search">
-          <input @keyup.enter="nameCountry" id="country" type="text" placeholder="Nome do país..." />
+          <input @keyup.enter="nameCountry" id="country" type="text" placeholder="Country name..." />
         </div>
       </div>
     </div>

@@ -9,12 +9,12 @@
         <img :src="d.flags.svg" alt="" />
       </div>
       <div class="info-right">
-        <p>Nome do país: <span>{{ d.translations.br }}</span></p>
-        <p v-if="d.capital">Nome da capital: <span>{{ d.capital }}</span></p>
-        <p>Sub região: <span>{{ d.subregion }}</span></p>
-        <p>Continente: <span>{{ d.region }}</span></p>
-        <p>População total: <span>{{ d.population }}</span></p>
-        <p>Fuso horário: <span>{{ d.timezones.reduce(s => s) }}</span></p>
+        <p>Name of the country: <span>{{ d.translations.br }}</span></p>
+        <p v-if="d.capital">Nome of the capital: <span>{{ d.capital }}</span></p>
+        <p>Sub region: <span>{{ d.subregion }}</span></p>
+        <p>Continent: <span>{{ d.region }}</span></p>
+        <p>Total population: <span>{{ d.population }}</span></p>
+        <p>Timezone: <span>{{ d.timezones.reduce(s => s) }}</span></p>
       </div>
     </div>
   </div>
